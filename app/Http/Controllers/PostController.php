@@ -13,6 +13,7 @@ public function index(Post $post)
      return view("posts.index")->with(["posts" => $post->getPaginateByLimit(1)]);
      
     }
+ dev_basis04
 public function show(Post $post)
 {
     return view("posts/show")->with(["post" => $post]);
@@ -27,5 +28,12 @@ public function store(Post $post, PostRequest $request)
     $post->fill($input)->save();
     return redirect('/posts/' . $post->id);
 }
+
+    
+public function show(Post $post)
+   {
+       return view("posts.show")->with(["post" => $post]);
+   }
+master
 }
 ?>
